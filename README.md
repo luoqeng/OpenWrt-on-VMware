@@ -29,4 +29,8 @@ Shadowsocks + ChnRoute 实现智能透明代理
     Passwd:passwd@#2048
 
 ## Docker
-- [OpenWrt-on-Docker](https://github.com/luoqeng/OpenWrt-on-Docker)
+- Docker 运行 OpenWrt: https://github.com/luoqeng/OpenWrt-on-Docker
+
+## OpenWrt 路由器推荐
+- https://hobgear.com/best-openwrt-lede-routers/
+- https://bluegadgettooth.com/best-openwrt-router/
