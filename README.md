@@ -14,7 +14,7 @@ Shadowsocks + ChnRoute 实现智能透明代理
 
 ## OpenWrt
 - 未开启DHCP，以防扰乱现有局域网。如有需要请自行开启。
-- 开启虚拟机，配置上网设备 IP 如下示例。
+- 开启虚拟机，配置上网设备 IP 如下示例。[下载链接](https://github.com/luoqeng/OpenWrt-on-VMware/releases/download/v18.06.2/openwrt-18.06.2.tar.gz)
 
     IP:192.168.127.X
 
