@@ -8,9 +8,11 @@ OpenWrt 本身获得自动翻墙能力，所有连入该路由的设备都可无
 
 网络适配器2 对应 eth1 外网接口 桥接模式 `如果 VMware 宿主机上网需要配置，请改成 NAT 模式，或者自行配置 OpenWrt WAN 接口配置`
 
+其他虚拟化软件类似 `esxi hyper-v virtualbox kvm`，创建虚拟机时添加两张网卡，都为桥接模式
+
 ## OpenWrt
 - 未开启DHCP，以防扰乱现有局域网。如有需要请自行开启。
-- 开启虚拟机，配置上网设备 IP 如下示例。[下载链接](https://github.com/luoqeng/OpenWrt-on-VMware/releases/download/v18.06.2/openwrt-18.06.2.tar.gz)
+- 开启虚拟机，配置上网设备 IP 如下示例。[下载链接](https://github.com/luoqeng/OpenWrt-on-VMware/releases)
 
     IP:192.168.127.X
 
