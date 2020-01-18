@@ -1,4 +1,6 @@
-# OpenWrt-on-VMware
+## 遗弃，推荐使用：https://github.com/luoqeng/caddy-v2ray-docker
+
+# ~~OpenWrt-on-VMware~~
 OpenWrt 本身获得自动翻墙能力，所有连入该路由的设备都可无障碍访问被墙的站点。
 
 国内 IP 不代理，国外 IP 走代理。代理通过 Shadowsocks 所带 ss-redir 做 TCP 转发实现，国内 IP 通过 chnroute 来区别.
