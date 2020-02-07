@@ -1,6 +1,4 @@
-## 遗弃，推荐使用：https://github.com/luoqeng/caddy-v2ray-docker
-
-# ~~OpenWrt-on-VMware~~
+# OpenWrt-on-VMware
 OpenWrt 本身获得自动翻墙能力，所有连入该路由的设备都可无障碍访问被墙的站点。
 
 国内 IP 不代理，国外 IP 走代理。代理通过 Shadowsocks 所带 ss-redir 做 TCP 转发实现，国内 IP 通过 chnroute 来区别.
@@ -29,41 +27,9 @@ OpenWrt 本身获得自动翻墙能力，所有连入该路由的设备都可无
     Passwd:passwd@#2048
 
 ## 其他
-  推测墙现在的策略是未知加密流量随机断流几分钟，超级难受。相当于开启白名单模式了
+推测墙现在的策略是未知加密流量随机断流几分钟，超级难受。相当于开启白名单模式了
 
-  目前使用的 gost，gost 之间的使用的 h2 协议通信，gost 客户端开启 ss 服务适配 ss 客户端，ss 客户端比较完善。
-
-  websocket 应该也可以，不过相比较 h2，多了一次升级握手流程。
-
-  可用这个脚本 [Ubuntu 18.04 Installation Script ](https://github.com/haoel/haoel.github.io/blob/master/scripts/install.ubuntu.18.04.sh)
-
-  [gost 设置 H2 服务](https://github.com/haoel/haoel.github.io#33-%E7%94%A8-gost-%E8%AE%BE%E7%BD%AE-https-%E6%9C%8D%E5%8A%A1) `国外VPS运行`
-  ```
-    ## 下面的四个参数需要改成你的
-    DOMAIN="www.xxxx.com"
-    USER="user"
-    PASS="passwd"
-    PORT=443
-
-    BIND_IP=0.0.0.0
-    CERT_DIR=/etc/letsencrypt
-    CERT=${CERT_DIR}/live/${DOMAIN}/fullchain.pem
-    KEY=${CERT_DIR}/live/${DOMAIN}/privkey.pem
-
-    WEB_DIR=${HOME}/.www
-    FILE_NAME=hello.txt
-    mkdir -p ${WEB_DIR} && echo 'hello world' > ${WEB_DIR}/${FILE_NAME} # hello world 可改成其他字符，伪装成一个网站
-
-    sudo docker run -d --name gost \
-      -v ${CERT_DIR}:${CERT_DIR}:ro \
-      -v ${WEB_DIR}:/var/www:ro \
-      --net=host ginuerzh/gost \
-      -L "http2://${USER}:${PASS}@${BIND_IP}:${PORT}?cert=${CERT}&key=${KEY}&probe_resist=file:/var/www/${FILE_NAME}"
-  ```
-  [gost 客户端开启 SS 服务](https://github.com/haoel/haoel.github.io#41-gost-%E5%AE%A2%E6%88%B7%E7%AB%AF) `推荐在局域网内运行或者国内VPS`
-  ```
-    ./gost -L ss2://aes-256-gcm:password@:1025 -F https://user:passwd@www.xxxx.com:443
-  ```
+当前各种自发明加密协议基本残废，跑在 [TLS](https://github.com/shadowsocks/v2ray-plugin) 协议里面比较稳妥，推荐搭配。
 
 ### 参考
  - https://cokebar.info/archives/664
