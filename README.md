@@ -8,6 +8,6 @@ openwrt lean x86 + luci-app-ssr-plus [下载链接](https://github.com/luoqeng/O
 
 User:root
 
-Passwd:passworld
+Passwd:password
 
 
